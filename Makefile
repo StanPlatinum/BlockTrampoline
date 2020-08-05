@@ -1,4 +1,5 @@
-DYNINST_ROOT=/home/weijliu/ShadowGuard/thirdparty/dyninst-10.1.0/install
+DYNINST_ROOT=/home/dajiejie/ShadowGuard/thirdparty/dyninst-10.1.0/install
+#DYNINST_ROOT=/home/weijliu/ShadowGuard/thirdparty/dyninst-10.1.0/install
 #DYNINST_ROOT=/home/xm13/projects/liteCFI/thirdparty/dyninst-10.1.0/install
 
 all: BlockTrampoline
