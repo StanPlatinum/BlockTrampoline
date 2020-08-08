@@ -1,5 +1,5 @@
-DYNINST_ROOT=/home/dajiejie/ShadowGuard/thirdparty/dyninst-10.1.0/install
-#DYNINST_ROOT=/home/weijliu/ShadowGuard/thirdparty/dyninst-10.1.0/install
+#DYNINST_ROOT=/home/dajiejie/ShadowGuard/thirdparty/dyninst-10.1.0/install
+DYNINST_ROOT=/home/weijliu/ShadowGuard/thirdparty/dyninst-10.1.0/install
 #DYNINST_ROOT=/home/xm13/projects/liteCFI/thirdparty/dyninst-10.1.0/install
 
 all: BlockTrampoline
@@ -10,6 +10,8 @@ BlockTrampoline: BlockTrampoline.cpp
 		-L$(DYNINST_ROOT)/lib \
 		-ldyninstAPI -lboost_system \
 		-Wl,-rpath='$(DYNINST_ROOT)/lib'
+docker: BlockTrampoline
+	./BlockTrampoline --disable-function-pointer-reloc --output docker.inst.bak /usr/bin/docker
 
 clean:
-	rm -f BlockTrampoline FuncSort libcg.so
+	rm -f BlockTrampoline 
